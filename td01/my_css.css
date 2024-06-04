@@ -1,0 +1,78 @@
+h1 {
+   color: navy; 
+   text-align: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+h2 {
+    color: red;
+}
+
+a:visited {
+    color: orange;
+}
+
+a:hover {
+    background-color: greenyellow;
+}
+
+ol {
+    color: chocolate;
+}
+
+li.cs {
+    color: crimson;
+}
+
+li.tm {
+    color: blueviolet;
+}
+
+li{
+    color: cornflowerblue;
+}
+
+#nom {
+    text-decoration: underline;
+}
+
+ol li {
+    list-style-type: lower-greek;
+}
+
+.gras {
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+#matiere {
+    background-color: salmon;
+    /*display: none;*/
+}
+
+table {
+    border-collapse: collapse;
+    width: 75%;
+}
+
+caption {
+    text-align: center;
+    font-weight: bold;
+}
+
+th {
+    color: blue;
+    border: 2px solid black;    
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+    background-color: peachpuff;
+    border: 2px solid black;
+}
+
+hr {
+    margin-bottom: 30px;
+}
