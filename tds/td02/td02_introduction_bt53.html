@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LO07 2023 TD02 : bootstrap 5.3</title>
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap523.css" type="text/css"/>
+    <style>
+      .bordered{
+        border: 1px solid;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>Introduction à Bootstrap 5.3</h1>
+      <script 
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+          integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+      crossorigin="anonymous"></script>
+
+      <!-- ================================================================================================================ -->
+      <!-- ===== Exercice 2 : Squelette de la page avec modification du navbar -->
+      <!-- ================================================================================================================ -->
+
+      <nav class="navbar navbar-expand-lg bg-primary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">LO07</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="https://www.utt.fr/
+                " target="_blank">UTT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.utt.fr/formations/diplome-d-ingenieur/informatique-et-systemes-d-information">ISI</a>
+              </li>
+
+
+              <!-- ===== SE ===== -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">SE</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://www.gatech.edu/" target="_blank">Georgia Tech</a></li>
+                  <li><a class="dropdown-item" href="https://www.etsmtl.ca/" target="_blank">Ecole de technologe supérieure de Montreal</a></li>                  
+                  <li><a class="dropdown-item" href="https://h-da.de/" target="_blank">Hochschule Darmstadt</a></li>                   
+                </ul>
+              </li>
+
+              <!-- ===== Documentation ===== -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/" target="_blank">Documentation officielle de BT 5.3</a></li>
+
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/layout/containers/#default-container" target="_blank">Container</a></li>                  
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/components/card/#about" target="_blank">Card</a></li>                   
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/components/navbar/" target="_blank">Navbar</a></li>
+
+                  <li><hr class="dropdown-divider"></li>    
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/customize/color/" target="_blank">Couleurs</a></li>                                    
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/components/buttons/" target="_blank">Boutons, Button group,badges, </a></li>                                     
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/layout/columns/" target="_blank">Layout columns</a></li>                                    
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/content/tables/" target="_blank">Table</a></li>                                      
+                  <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.3/layout/grid/" target="_blank">Layout grid</a></li>   
+
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="https://www.w3schools.com/bootstrap5/bootstrap_get_started.php" target="_blank">W3schools: Bootstrap 5 Get Started</a></li>
+                  <li><a class="dropdown-item" href="https://openclassrooms.com/fr/courses/7542506-creez-des-sites-web-responsives-avec-bootstrap-5" target="_blank">OpenClassrooms: Bootstrap 5</a></li>
+                  <li><a class="dropdown-item" href="https://github.com/websealevel/doc-bootstrap5" target="_blank">Github: Bootstrap 5</a></li>
+                </ul>
+              </li>
+
+              <!-- ===== Exemeple de menu déactivé ===== -->
+
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
+      <!-- ================================================================================================================ -->
+      <!-- ===== Les jumbotrons de BT3 n'existe plus et sont remplacés par de simple div ===== -->       
+
+      <div class="mt-4 p-5 bg-primary text-white rounded">
+        <h1>Programme ISI de l'UTT</h1>
+        <p>Le programme ISI de l'UTT dispose actuellement de trois filières ATN, IPL et VDC</p>
+      </div>
+
+      <!-- ================================================================================================================ -->
+      <!-- ===== Exercice 3 ===== -->
+      <!-- ================================================================================================================ -->
+
+      <p/><hr/>
+      <div class="card">
+        <div class="card-body bg-info">
+          <h5 class="card-title">Exercice 3</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Présentation des boutons, badges et couleurs</h6>
+          <p class="card-text">La documentation est directement disponible dans le menu Documentation.</p>
+
+          <div class="p-2 bg-light">
+            <span class="badge text-bg-danger">HTML</span>
+            <span class="badge text-bg-info">CSS</span>
+            <span class="badge text-bg-primary">PHP</span>
+            <span class="badge text-bg-dark">SQL</span>
+            <span class="badge text-bg-secondary">MVC</span>
+            <span class="badge text-bg-warning">Javascript</span>
+            <span class="badge text-bg-light">RGPD</span>
+            <span class="badge text-bg-sucess">XML</span>
+          </div>
+
+          <p/><hr/>
+
+          <div class="mb-4">
+            <button type="button" class="btn btn-danger">ATN <span class="badge bg-dark">23</span></button>
+            <button type="button" class="btn btn-danger">IPL <span class="badge bg-info">16</span></button>
+            <button type="button" class="btn btn-danger position-relative">ATN <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">10</span></button>
+          </div>
+
+          <p/><hr/>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-light">UTT</button>
+            <button type="button" class="btn btn-outline-light">UTC</button>
+            <button type="button" class="btn btn-outline-light">UTBM</button>
+            <button type="button" class="btn btn-outline-light">UTSEUS</button>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- ================================================================================================================ -->
+      <!-- ===== Exercice 4 ===== -->
+      <!-- ================================================================================================================ -->
+
+      <p/><hr/>
+      <div class="card">
+        <div class="card-body bg-light">
+          <h5 class="card-title">Exercice 4 : Présentation des listes et des tableaux</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Présentation des listes et des tableaux</h6>
+
+          <ul class="list-group">
+            <li class="list-group-item">TC</li>
+            <li class="list-group-item active">ISI</li>
+            <li class="list-group-item">RT</li>
+            <li class="list-group-item">GM</li>
+            <li class="list-group-item">GI</li>
+          </ul>
+
+          <p/><hr/>
+          
+          <table class="table table-bordered">
+            <thead>
+              <tr class="table-dark">
+                <th scope="col">#</th>
+                <th scope="col">ATN</th>
+                <th scope="col">IPL</th>
+                <th scope="col">VDC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-warning">
+                <th scope="row">CS</th>
+                <td>
+                  <ul class="list-group">
+                    <li class="list-group-item">IF09</li>
+                    <li class="list-group-item">IF22</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul class="list-group">
+                    <li class="list-group-item">IF05</li>
+                    <li class="list-group-item">IF10</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul class="list-group">
+                    <li class="list-group-item">IF17</li>
+                    <li class="list-group-item">IF29</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="table-info">
+                <th scope="row">TM</th>
+                <td>
+                  <ul class="list-group">
+                    <li class="list-group-item">IF20</li>
+                    <li class="list-group-item">IF34</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul class="list-group">
+                    <li class="list-group-item">IF26</li>
+                    <li class="list-group-item">IF31</li>
+                    <li class="list-group-item">LO10</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul class="list-group">
+                    <li class="list-group-item">IF28</li>
+                    <li class="list-group-item">IF34</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+
+      <!-- ================================================================================================================ -->
+      <!-- ===== Exercice 5 : Grid ===== -->
+      <!-- ================================================================================================================ -->      
+
+      <p/><hr/><p/>
+      <div class="card">
+        <div class="card-body bg-success-subtle">
+          <h5 class="card-title">Exercice 5</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Introduction aux GRIDs</h6>
+
+          <div class="container">
+            <div class="row bordered">
+              <div class="col-2 bordered">
+                Extra small
+              </div>
+              <div class="col-2 bordered">
+                Small
+              </div>
+              <div class="col-2 bordered">
+                Medium
+              </div>
+              <div class="col-2 bordered">
+                Large
+              </div>
+              <div class="col-2 bordered">
+                Extra large
+              </div>
+              <div class="col-2 bordered">
+                Extra extra large
+              </div>
+            </div>
+          </div>
+            <p/><hr/>
+          <div class="container">  
+            <div class="row bordered">
+              <div class="col-12 text-center bordered bg-light">TC</div>
+              <div class="col-3 text-center bg-warning">ISI</div>
+              <div class="col-3 text-center bg-info">RT</div>
+              <div class="col-3 text-center bg-primary">GI</div>
+              <div class="col-3 text-center bg-success">GM</div>
+              <div class="col-1 text-center bordered">ATN</div>
+              <div class="col-1 text-center bordered">IPL</div>
+              <div class="col-1 text-center bordered">VDC</div>
+              <div class="col-1 text-center bordered">CSR</div>
+              <div class="col-1 text-center bordered">SSC</div>
+              <div class="col-1 text-center bordered">TMOC</div>
+              <div class="col-1 text-center bordered">LET</div>
+              <div class="col-1 text-center bordered">LIP</div>
+              <div class="col-1 text-center bordered">RAMS</div>
+              <div class="col-1 text-center bordered">EME</div>
+              <div class="col-1 text-center bordered">TCMC</div>
+              <div class="col-1 text-center bordered">TQM</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <p/><hr/><p/>
+  <small>Page de Charlotte NOE rédigée le 02 03 2024</small>
+  <p/><hr/><p/>    
+
+</body>
+</html>
