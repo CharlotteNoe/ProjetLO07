@@ -12,7 +12,13 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
 
       ?>
 
-    <form role="form" method='get' action='router1.php'>
+      <div class="mt-4 p-2 text-dark text-center bg-success rounded">
+          <h4>
+              Choix d'une banque pour en voir ses client.e.s
+          </h4>
+      </div>
+
+    <form role="form" method='get' action='router1.php' class="mt-4 p-2 text-white bg-secondary rounded">
       <div class="form-group">
         <input type="hidden" name='action' value='administrateurReadCompte'>
         <label for="banque">Banque : </label> <select class="form-control" id='banque' name='banque' style="width: 150px">
@@ -26,7 +32,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         </select>
       </div>
       <p/><br/>
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-success" type="submit">Valider le choix</button>
     </form>
     <p/>
   </div>
