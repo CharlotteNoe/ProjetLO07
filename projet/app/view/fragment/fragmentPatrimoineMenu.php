@@ -8,13 +8,13 @@ require_once '../model/ModelPersonne.php';
      <?php 
      switch ($_SESSION['statut']) {
      case ModelPersonne::ADMINISTRATEUR:
-             echo('<a class="navbar-brand" href="router1.php?action=Accueil">NOE-| Administration | '.$_SESSION['login']. ' | </a>');
+             echo('<a class="navbar-brand" href="router1.php?action=Accueil">NOE-GAGNIERE | Administration | '.$_SESSION['login']. ' | </a>');
      break;
      case ModelPersonne::CLIENT:
-             echo('<a class="navbar-brand" href="router1.php?action=Accueil">NOE-| Client | '.$_SESSION['login']. ' | </a>');
+             echo('<a class="navbar-brand" href="router1.php?action=Accueil">NOE-GAGNIERE | Client | '.$_SESSION['login']. ' | </a>');
      break;
      default:
-             echo('<a class="navbar-brand" href="router1.php?action=Accueil">NOE-|||</a>');
+             echo('<a class="navbar-brand" href="router1.php?action=Accueil">NOE-GAGNIERE | Non connecté |</a>');
      break;
      }
      ?>
