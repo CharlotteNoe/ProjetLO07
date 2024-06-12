@@ -14,7 +14,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
 
       <div class="mt-4 p-2 text-dark text-center bg-success rounded">
           <h4>
-              Affichage des client.e.s de la banque choisie
+              Listes des comptes d'une banque
           </h4>
       </div>
 

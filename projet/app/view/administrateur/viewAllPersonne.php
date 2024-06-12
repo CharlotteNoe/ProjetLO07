@@ -12,7 +12,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
       include $root . '/app/view/fragment/fragmentPatrimoineJumbotron.html';
       ?>
 
-    <table class = "table table-striped table-bordered">
+    <table class="mt-4 table table-warning table-striped table-bordered">
       <thead>
         <tr>
           <th scope = "col">nom</th>
@@ -21,7 +21,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
           <th scope = "col">mot de passe</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-group-divider">
           <?php
           foreach ($results as $element) {
            printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $element->getNom(), 

@@ -12,7 +12,13 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
       include $root . '/app/view/fragment/fragmentPatrimoineJumbotron.html';
       ?>
 
-    <table class = "table table-striped table-bordered">
+      <div class="mt-4 p-2 text-dark text-center bg-success rounded">
+          <h4>
+              Listes des résidences
+          </h4>
+      </div>
+
+    <table class="mt-4 table table-warning table-striped table-bordered">
       <thead>
         <tr>
           <th scope = "col">client_nom</th>
@@ -22,7 +28,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
           <th scope = "col">residence_prix</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-group-divider">
           <?php
           foreach ($results as $element) {
               echo("<tr>");
