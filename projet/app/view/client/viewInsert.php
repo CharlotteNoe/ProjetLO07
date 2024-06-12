@@ -10,9 +10,15 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     <?php
       include $root . '/app/view/fragment/fragmentPatrimoineMenu.php';
       include $root . '/app/view/fragment/fragmentPatrimoineJumbotron.html';
-    ?> 
+    ?>
 
-    <form role="form" method='get' action='router1.php'>
+      <div class="mt-4 p-2 text-dark text-center bg-success rounded">
+          <h4>
+              Ajout d'un nouveau compte
+          </h4>
+      </div>
+
+    <form role="form" method='get' action='router1.php' class="mt-4 p-2 text-white bg-secondary rounded">
       <div class="form-group">
         <input type="hidden" name='action' value='clientCompteCreated'>        
         <label class='w-25' for="label">Label : </label><input type="text" name='label' size='40' required> <br/>                          
@@ -29,7 +35,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
       </div>
       <p/>
        <br/> 
-      <button class="btn btn-primary" type="submit">Go</button>
+      <button class="btn btn-success" type="submit">Ajouter le compte</button>
     </form>
     <p/>
   </div>
