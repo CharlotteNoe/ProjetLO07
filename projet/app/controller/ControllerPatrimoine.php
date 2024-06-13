@@ -30,26 +30,13 @@ class ControllerPatrimoine {
    );
    include 'config.php';
    if ($results){
-       $statut =$results['0'];
-       //Changement
-       $_SESSION['statut']=$statut;
-       //Fin changement
+       $utilisateur =$results[0];
+       $_SESSION['statut']=$utilisateur->getStatut();
        $_SESSION['login']=$_GET['login'];
-       /*
-       switch ($statut){
-           case ModelPersonne::ADMINISTRATEUR:
-               $vue = $root . '/app/view/viewAdministrateurAccueil.php';
-               break;
-           case ModelPersonne::CLIENT:
-               $vue = $root . '/app/view/viewClientAccueil.php';
-               break;
-           default :
+       $_SESSION['prenom']=$utilisateur->getPrenom();
+       $_SESSION['nom']=$utilisateur->getNom();
        $vue = $root . '/app/view/viewPatrimoineAccueil.php';
-       */
-       //Changement
-       $vue = $root . '/app/view/viewPatrimoineAccueil.php';
-       //Fin de changement
-       //}
+       
    }
    else{
        $vue = $root . '/app/view/connexion/viewErrorConnexion.php';
@@ -62,6 +49,8 @@ class ControllerPatrimoine {
      /*session_unset();*/
      $_SESSION['login']="vide";
      $_SESSION['statut']=2;
+     $_SESSION['prenom']= "vide";
+     $_SESSION['nom']= "vide";
      include 'config.php';
      $vue = $root . '/app/view/viewPatrimoineAccueil.php';
      require ($vue);

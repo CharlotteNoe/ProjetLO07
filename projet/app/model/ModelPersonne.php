@@ -105,13 +105,13 @@ class ModelPersonne {
  public static function verifyUtilisateur($login, $password){
    try{
     $database = Model::getInstance();
-    $query = "select statut from personne where login= :login and password= :password";
+    $query = "select statut, prenom, nom from personne where login= :login and password= :password";
     $statement = $database->prepare($query);
     $statement->execute([
        'login' => $login,
        'password' => $password
     ]);
-    $results = $statement->fetch();
+    $results = $statement->fetchAll(PDO::FETCH_CLASS, 'ModelPersonne');
     return $results;
    } catch (PDOException $e) {
    printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
