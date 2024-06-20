@@ -20,8 +20,8 @@ require($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     <table class="mt-4 table table-warning table-striped table-bordered">
         <thead>
         <tr>
-            <th scope="col">label</th>
-            <th scope="col">pays</th>
+            <th scope="col">Label</th>
+            <th scope="col">Pays</th>
         </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -31,6 +31,8 @@ require($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
                 $element->getPays());
         }
         ?>
+        
+        
         </tbody>
     </table>
 </div>

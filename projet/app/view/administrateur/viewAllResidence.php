@@ -21,11 +21,11 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     <table class="mt-4 table table-warning table-striped table-bordered">
       <thead>
         <tr>
-          <th scope = "col">client_nom</th>
-          <th scope = "col">client_prenom</th>
-          <th scope = "col">residence_label</th>
-          <th scope = "col">residence_ville</th>
-          <th scope = "col">residence_prix</th>
+          <th scope = "col">Nom</th>
+          <th scope = "col">Prénom</th>
+          <th scope = "col">Résidence</th>
+          <th scope = "col">Ville</th>
+          <th scope = "col">Prix</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">

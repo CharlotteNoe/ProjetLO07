@@ -20,9 +20,9 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     <table class="mt-4 table table-warning table-striped table-bordered">
       <thead>
         <tr>
-          <th scope = "col">compte</th>
-          <th scope = "col">montant</th>
-          <th scope = "col">banque</th>
+          <th scope = "col">Compte</th>
+          <th scope = "col">Montant</th>
+          <th scope = "col">Banque</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">

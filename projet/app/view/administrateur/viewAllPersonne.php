@@ -15,10 +15,10 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     <table class="mt-4 table table-warning table-striped table-bordered">
       <thead>
         <tr>
-          <th scope = "col">nom</th>
-          <th scope = "col">prénom</th>
-          <th scope = "col">login</th>
-          <th scope = "col">mot de passe</th>
+          <th scope = "col">Nom</th>
+          <th scope = "col">Prénom</th>
+          <th scope = "col">Login</th>
+          <th scope = "col">Mot de passe</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
