@@ -45,7 +45,6 @@ class ControllerPatrimoine {
  
  
  public static function patrimoineLogOut(){
-     /*session_unset();*/
      $_SESSION['login']="vide";
      $_SESSION['statut']=2;
      $_SESSION['prenom']= "vide";
@@ -55,6 +54,11 @@ class ControllerPatrimoine {
      require ($vue);
  }
 
+ public static function patrimoineInnovationMVC(){
+     include 'config.php';
+     $vue = $root . '/app/view/innovation/innovationMVC.php';
+     require ($vue);
+ }
 }
 
 ?>

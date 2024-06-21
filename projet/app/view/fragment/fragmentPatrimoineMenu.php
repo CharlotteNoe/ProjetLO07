@@ -83,7 +83,7 @@ require_once '../model/ModelPersonne.php';
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Innovations</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item">...</a></li>
+                        <li><a class="dropdown-item"  href="router1.php?action=patrimoineInnovationMVC">Amélioration du MVC</a></li>
                     </ul>
                 </li>
 

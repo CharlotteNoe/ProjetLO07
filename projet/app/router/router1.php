@@ -46,6 +46,7 @@ switch ($action) {
     case "patrimoineInscription" :
     case "patrimoineInscrit" :
     case "patrimoineLogOut" :
+    case "patrimoineInnovationMVC" :
         ControllerPatrimoine::$action();
         break;
 
