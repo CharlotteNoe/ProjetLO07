@@ -61,7 +61,7 @@ class ModelResidence {
 
  
  
- public static function getAll() {
+ public static function getAllResidence() {
   try {
    $database = Model::getInstance();
    $query = "SELECT P.nom, P.prenom, R.label, R.ville, R.prix from residence as R, personne as P where R.personne_id=P.id;";

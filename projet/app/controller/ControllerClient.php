@@ -53,7 +53,10 @@ class ControllerClient
     //Affiche la liste de toutes les résidences du client
     public static function clientReadAllResidence()
     {
-
+        $results = ModelResidence::getAllResidence($_SESSION['login']);
+        include 'config.php';
+        $vue = $root . '/app/view/client/viewAllResidence.php';
+        require($vue);
     }
 
     //Affiche un formulaire pour acheter une résidence
