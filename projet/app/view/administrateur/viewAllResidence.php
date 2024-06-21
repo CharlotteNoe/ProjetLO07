@@ -17,7 +17,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
               Listes des résidences
           </h4>
       </div>
-
+<!--
     <table class="mt-4 table table-warning table-striped table-bordered">
       <thead>
         <tr>
@@ -29,7 +29,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         </tr>
       </thead>
       <tbody class="table-group-divider">
-          <?php
+          
           foreach ($results as $element) {
               echo("<tr>");
               echo("<td>" . htmlspecialchars($element['nom']) . "</td>");
@@ -39,9 +39,19 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
               echo("<td>" . htmlspecialchars($element['prix']) . "</td>");
               echo("</tr>");
           }
-          ?>
+          
       </tbody>
     </table>
+      -->
+          <?php
+    require_once ($root . '/outil/CreateTable.php');
+    $headers=['Nom', 'Prénom', 'Résidence', 'Ville', 'Prix'];
+    $data =[];
+    foreach ($results as $element){
+        $data[]=[htmlspecialchars($element['nom']),htmlspecialchars($element['prenom']),htmlspecialchars($element['label']),htmlspecialchars($element['ville']),htmlspecialchars($element['prix']).",00"];
+    }
+    creerTable($headers, $data);
+    ?>
   </div>
   <?php include $root . '/app/view/fragment/fragmentPatrimoineFooter.html'; ?>
 

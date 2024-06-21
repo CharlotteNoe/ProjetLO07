@@ -17,24 +17,15 @@ require($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         </h4>
     </div>
 
-    <table class="mt-4 table table-warning table-striped table-bordered">
-        <thead>
-        <tr>
-            <th scope="col">Label</th>
-            <th scope="col">Pays</th>
-        </tr>
-        </thead>
-        <tbody class="table-group-divider">
-        <?php
-        foreach ($results as $element) {
-            printf("<tr><td>%s</td><td>%s</td></tr>", $element->getLabel(),
-                $element->getPays());
-        }
-        ?>
-        
-        
-        </tbody>
-    </table>
+    <?php
+    require_once ($root . '/outil/CreateTable.php');
+    $headers=['Label', 'Pays'];
+    $data =[];
+    foreach ($results as $element){
+        $data[]=[$element->getLabel(),$element->getPays()];
+    }
+    creerTable($headers, $data);
+    ?>
 </div>
 <?php include $root . '/app/view/fragment/fragmentPatrimoineFooter.html'; ?>
 
