@@ -59,8 +59,17 @@ class ControllerClient
         require($vue);
     }
 
-    //Affiche un formulaire pour acheter une résidence
+    //Affiche un formulaire pour sélectionner une résidence à acheter
     public static function clientResidenceAchat()
+    {
+        $results = ModelResidence::getAllResidenceSaufLogin($_SESSION['login']);
+        include 'config.php';
+        $vue = $root . '/app/view/client/viewAchat.php';
+        require($vue);
+    }
+
+    //Affiche un formulaire pour acheter la résidence
+    public static function clientResidenceAchatCompte()
     {
 
     }

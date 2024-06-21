@@ -18,10 +18,10 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     </div>
     <?php
     require_once ($root . '/outil/CreateTable.php');
-    $headers=['Adresse', 'Ville', 'Prix'];
+    $headers=['Nom', 'Ville', 'Prix'];
     $data =[];
     foreach ($results as $element){
-        $data[]=[htmlspecialchars($element['label']),htmlspecialchars($element['ville']),htmlspecialchars($element['prix'])];
+        $data[]=[htmlspecialchars($element['residence_label']),htmlspecialchars($element['ville']),htmlspecialchars($element['prix'])];
     }
     creerTable($headers, $data);
     ?>

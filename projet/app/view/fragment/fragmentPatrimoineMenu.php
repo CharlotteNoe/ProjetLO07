@@ -62,7 +62,7 @@ require_once '../model/ModelPersonne.php';
                         echo('<li class="nav-item dropdown">');
                         echo('<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mes résidences</a>');
                         echo('<ul class="dropdown-menu">');
-                        echo('<li><a class="dropdown-item" href="router1.php?action=clientReadAllResidence">Liste des mes résidences (TODO)</a></li>');
+                        echo('<li><a class="dropdown-item" href="router1.php?action=clientReadAllResidence">Liste des mes résidences</a></li>');
                         echo('<li><a class="dropdown-item" href="router1.php?action=clientResidenceAchat">Achat d' . "'une nouvelle résidence (TODO)</a></li>");
                         echo('</ul>');
                         echo('</li>');
