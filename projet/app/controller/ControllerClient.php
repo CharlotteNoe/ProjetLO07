@@ -41,7 +41,10 @@ class ControllerClient
     // Affiche un formulaire pour faire un transfert inter-compte
     public static function clientTransfertInterCompte()
     {
-
+        $results = ModelCompte::getAllCompte($_SESSION['login']);
+        include 'config.php';
+        $vue = $root . '/app/view/client/viewTransfertInterCompte.php';
+        require($vue);
     }
 
     // Fait le transfert

@@ -36,6 +36,7 @@ switch ($action) {
     case "clientTransfertInterCompteFait" :
     case "clientReadAllResidence" :
     case "clientResidenceAchat" :
+    case "clientResidenceAchatCompte" :
     case "clientResidenceAchetee" :
     case "clientReadPatrimoine" :
         ControllerClient::$action();

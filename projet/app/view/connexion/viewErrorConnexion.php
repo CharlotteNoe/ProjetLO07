@@ -10,7 +10,7 @@ require($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     include $root . '/app/view/fragment/fragmentPatrimoineMenu.php';
     include $root . '/app/view/fragment/fragmentPatrimoineJumbotron.html';
     ?>
-    <h4 class='mt-4 p-2 text-dark text-center bg-success rounded'>Login ou mot de passe incorrect</h4>
+    <h4 class='mt-4 p-2 text-white text-center bg-danger rounded'>Login ou mot de passe incorrect</h4>
     <form role="form" method='get' action='router1.php' class="mt-4 p-2 text-white bg-secondary rounded">
         <div class="form-group">
             <input type="hidden" name='action' value='patrimoineConnected'>
