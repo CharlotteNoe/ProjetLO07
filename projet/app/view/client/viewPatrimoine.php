@@ -16,27 +16,6 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
             Mon patrimoine (compte.s et résidence.s)
         </h4>
     </div>
-    <!--
-        <table class="mt-4 table table-warning table-striped table-bordered">
-          <thead>
-            <tr>
-              <th scope = "col">Compte</th>
-              <th scope = "col">Montant</th>
-              <th scope = "col">Banque</th>
-            </tr>
-          </thead>
-          <tbody class="table-group-divider">
-
-              foreach ($results as $element) {
-                  echo("<tr>");
-                  echo("<td>" . htmlspecialchars($element['compte_label']) . "</td>");
-                  echo("<td>" . htmlspecialchars($element['montant']) . "</td>");
-                  echo("<td>" . htmlspecialchars($element['banque_label']) . "</td>");
-                  echo("</tr>");
-              }
-
-          </tbody>
-        </table>-->
     <?php
     require_once ($root . '/outil/CreateTable.php');
     $headers=['Catégorie', 'Label', 'Valeur', 'Capital'];

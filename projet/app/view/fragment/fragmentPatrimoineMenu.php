@@ -63,14 +63,14 @@ require_once '../model/ModelPersonne.php';
                         echo('<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mes résidences</a>');
                         echo('<ul class="dropdown-menu">');
                         echo('<li><a class="dropdown-item" href="router1.php?action=clientReadAllResidence">Liste des mes résidences</a></li>');
-                        echo('<li><a class="dropdown-item" href="router1.php?action=clientResidenceAchat">Achat d' . "'une nouvelle résidence (TODO)</a></li>");
+                        echo('<li><a class="dropdown-item" href="router1.php?action=clientResidenceAchat">Achat d' . "'une nouvelle résidence (ALED)</a></li>");
                         echo('</ul>');
                         echo('</li>');
 
                         echo('<li class="nav-item dropdown">');
                         echo('<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mon patrimoine</a>');
                         echo('<ul class="dropdown-menu">');
-                        echo('<li><a class="dropdown-item" href="router1.php?action=clientReadPatrimoine">Bilan de mon patrimoine (TODO)</a></li>');
+                        echo('<li><a class="dropdown-item" href="router1.php?action=clientReadPatrimoine">Bilan de mon patrimoine</a></li>');
                         echo('</ul>');
                         echo('</li>');
 
@@ -88,12 +88,10 @@ require_once '../model/ModelPersonne.php';
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Se
-                        connecter</a>
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Se connecter</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="router1.php?action=patrimoineConnexion">Login</a></li>
-                        <li><a class="dropdown-item" href="router1.php?action=patrimoineInscription">S'inscrire
-                                (TODO)</a></li>
+                        <li><a class="dropdown-item" href="router1.php?action=patrimoineInscription">S'inscrire (TODO)</a></li>
                         <li><a class="dropdown-item" href="router1.php?action=patrimoineLogOut">Se deconnecter</a></li>
                     </ul>
                 </li>
