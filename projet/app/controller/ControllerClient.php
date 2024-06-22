@@ -83,7 +83,11 @@ class ControllerClient
     //Affiche le bilan du patrimoine
     public static function clientReadPatrimoine()
     {
-
+        $results = ModelCompte::getAllCompte($_SESSION['login']);
+        $results2 = ModelResidence::getAllResidence($_SESSION['login']);
+        include 'config.php';
+        $vue = $root . '/app/view/client/viewPatrimoine.php';
+        require($vue);
     }
 
 }
