@@ -68,7 +68,7 @@ class ControllerPatrimoine
 
         } else {
             $results = ModelPersonne::ajoutPersonne($_GET['nom'], $_GET['prenom'], $_GET['login'], $_GET['password']);
-            $vue = $root . '/app/view/viewPatrimoineAccueil.php';
+            $vue = $root . '/app/view/connexion/viewPatrimoineConnexion.php';
         }
         require($vue);
     }
