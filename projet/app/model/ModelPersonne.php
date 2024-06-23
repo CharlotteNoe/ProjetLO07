@@ -179,8 +179,6 @@ class ModelPersonne
         }
 
     }
-    
-    
     public static function getPrenomNOm($id_client){
         try {
             $database = Model::getInstance();
@@ -196,6 +194,8 @@ class ModelPersonne
             return NULL;
         }
     }
+    
+    
 
 }
 

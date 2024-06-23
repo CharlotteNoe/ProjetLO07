@@ -49,12 +49,12 @@ switch ($action) {
     case "patrimoineInscription" :
     case "patrimoineInscrit" :
     case "patrimoineLogOut" :
-    case "patrimoineInnovationMVC" :
         ControllerPatrimoine::$action();
         break;
     
     case "innovationReadClient" :
     case "innovationPDF" :
+    case "innovationMVC" :
         ControllerInnovation::$action();
         break;
 

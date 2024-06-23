@@ -85,13 +85,7 @@ class ControllerPatrimoine
         require($vue);
     }
 
-    //Affiche la page présentant l'innovation MVC
-    public static function patrimoineInnovationMVC()
-    {
-        include 'config.php';
-        $vue = $root . '/app/view/innovation/innovationMVC.php';
-        require($vue);
-    }
+    
 }
 
 ?>

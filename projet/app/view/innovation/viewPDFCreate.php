@@ -31,7 +31,6 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
 
         </form>
       </div>
-      
       </div>
 
   <?php include $root . '/app/view/fragment/fragmentPatrimoineFooter.html'; ?>
