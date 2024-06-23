@@ -18,6 +18,12 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         </h4>
     </div>
 
+    <div class="mt-4 p-2 text-white text-center bg-danger rounded">
+        <h4>
+            Veuillez bien sélectionner tous les champs
+        </h4>
+    </div>
+
     <form role="form" method='get' action='router1.php' class="mt-4 p-2 text-white bg-secondary rounded">
         <div class="form-group">
             <input type="hidden" name='action' value='clientResidenceAchatCompte'>
@@ -40,6 +46,3 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
 <?php include $root . '/app/view/fragment/fragmentPatrimoineFooter.html'; ?>
 
 <!-- ----- fin viewAchat -->
-
-
-

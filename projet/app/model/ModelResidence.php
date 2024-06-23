@@ -108,7 +108,7 @@ class ModelResidence
             $query = "SELECT R.label as residence_label, R.prix, R.ville from residence as R, personne as P where R.personne_id=P.id and P.login<>:login";
             $statement = $database->prepare($query);
             $statement->execute(['login' => $login]);
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelResidence");
             return $results;
         } catch (PDOException $e) {
             printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());

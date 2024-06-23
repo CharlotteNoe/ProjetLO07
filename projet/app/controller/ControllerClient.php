@@ -12,7 +12,7 @@ class ControllerClient
     // Affiche la liste de tous les comptes du client
     public static function clientReadAllCompte()
     {
-        $results = ModelCompte::getAllCompte($_SESSION['login']);
+        $results = ModelCompte::getAllCompte($_SESSION['login'], "ASSOC");
         include 'config.php';
         $vue = $root . '/app/view/client/viewAllCompte.php';
         require($vue);
@@ -41,7 +41,7 @@ class ControllerClient
     // Affiche un formulaire pour faire un transfert inter-compte
     public static function clientTransfertInterCompte()
     {
-        $results = ModelCompte::getAllCompte($_SESSION['login']);
+        $results = ModelCompte::getAllCompte($_SESSION['login'], "CLASS");
         include 'config.php';
         $vue = $root . '/app/view/client/viewTransfertInterCompte.php';
         require($vue);
@@ -50,7 +50,18 @@ class ControllerClient
     // Fait le transfert
     public static function clientTransfertInterCompteFait()
     {
-
+        include 'config.php';
+        if ($_GET['compteMoins'] == $_GET['comptePlus']) {
+            $vue = $root . '/app/view/client/viewErrorTransfertInterCompte.php';
+        } elseif ($_GET['compteMoins'] == null || $_GET['comptePlus'] == null) {
+            $vue = $root . '/app/view/client/viewErrorTransfertInterCompte.php';
+        } else {
+            $results = ModelCompte::transfertInterCompte(
+                htmlspecialchars($_GET['compteMoins']), htmlspecialchars($_GET['comptePlus']), htmlspecialchars($_GET['montant'])
+            );
+            $vue = $root . '/app/view/client/viewAllCompte.php';
+        }
+        require($vue);
     }
 
     //Affiche la liste de toutes les résidences du client
@@ -74,19 +85,39 @@ class ControllerClient
     //Affiche un formulaire pour acheter la résidence
     public static function clientResidenceAchatCompte()
     {
+        include 'config.php';
+        if ($_GET['residence'] == null){
+            $vue = $root . '/app/view/client/viewErrorAchat.php';
+        }else{
+            $montant = $_GET['residence']->getPrix();
+            $id_vendeur = $_GET['residence']->getPersonne_id();
+            $results = ModelCompte::getAllCompte($id_vendeur, "CLASS");
+            $results2 = ModelCompte::getAllCompte($_SESSION['login'], "CLASS");
+            $vue = $root . '/app/view/client/viewAchatCompte.php';
+        }
 
+        require($vue);
     }
 
     //Affiche l'achat de la résidence
     public static function clientResidenceAchetee()
     {
-
+        include 'config.php';
+        if ($_GET['compteVendeur'] == null || $_GET['compteAcheteur'] == null) {
+            $vue = $root . '/app/view/client/viewErrorAchat.php';
+        } else {
+            $results = ModelCompte::transfertInterCompte(
+                htmlspecialchars($_GET['compteAcheteur']), htmlspecialchars($_GET['compteVendeur']), htmlspecialchars($_GET['montant'])
+            );
+            $vue = $root . '/app/view/client/viewAllResidence.php';
+        }
+        require($vue);
     }
 
     //Affiche le bilan du patrimoine
     public static function clientReadPatrimoine()
     {
-        $results = ModelCompte::getAllCompte($_SESSION['login']);
+        $results = ModelCompte::getAllCompte($_SESSION['login'], "ASSOC");
         $results2 = ModelResidence::getAllResidence($_SESSION['login']);
         include 'config.php';
         $vue = $root . '/app/view/client/viewPatrimoine.php';
