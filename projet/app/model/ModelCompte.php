@@ -123,7 +123,19 @@ class ModelCompte {
   }   
  }
  
- 
+ public static function getSumCompte($client_id) {
+     try {
+   $database = Model::getInstance();
+   $query = "SELECT SUM(montant) as total_compte from compte where personne_id=:client_id";
+   $statement = $database->prepare($query);
+   $statement->execute(['client_id' => $client_id]);
+   $results = $statement->fetchAll(PDO::FETCH_COLUMN, 0);
+   return $results;
+  } catch (PDOException $e) {
+   printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+   return NULL;
+  }
+ }
 }
 ?>
 <!-- ----- fin ModelBanque -->

@@ -115,6 +115,20 @@ class ModelResidence
             return NULL;
         }
     }
+    
+     public static function getSumResidence($client_id) {
+        try {
+            $database = Model::getInstance();
+            $query = "SELECT SUM(prix) as total_residence from residence where personne_id=:client_id";
+            $statement = $database->prepare($query);
+            $statement->execute(['client_id' => $client_id]);
+            $results = $statement->fetchAll(PDO::FETCH_COLUMN, 0);
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+  }
+ }
 
 }
 

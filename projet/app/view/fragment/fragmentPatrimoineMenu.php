@@ -84,6 +84,7 @@ require_once '../model/ModelPersonne.php';
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Innovations</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item"  href="router1.php?action=patrimoineInnovationMVC">Amélioration du MVC</a></li>
+                        <li><a class="dropdown-item"  href="router1.php?action=innovationReadClient">Téléchargement des informations financières</a></li>
                     </ul>
                 </li>
 
@@ -91,7 +92,7 @@ require_once '../model/ModelPersonne.php';
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Se connecter</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="router1.php?action=patrimoineConnexion">Login</a></li>
-                        <li><a class="dropdown-item" href="router1.php?action=patrimoineInscription">S'inscrire (TODO)</a></li>
+                        <li><a class="dropdown-item" href="router1.php?action=patrimoineInscription">S'inscrire</a></li>
                         <li><a class="dropdown-item" href="router1.php?action=patrimoineLogOut">Se deconnecter</a></li>
                     </ul>
                 </li>

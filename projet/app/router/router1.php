@@ -4,6 +4,8 @@
 require('../controller/ControllerAdministrateur.php');
 require('../controller/ControllerPatrimoine.php');
 require('../controller/ControllerClient.php');
+require('../controller/ControllerInnovation.php');
+
 
 // --- récupération de l'action passée dans l'URL
 $query_string = $_SERVER['QUERY_STRING'];
@@ -36,6 +38,7 @@ switch ($action) {
     case "clientTransfertInterCompteFait" :
     case "clientReadAllResidence" :
     case "clientResidenceAchat" :
+    case "clientResidenceAchatCompte" :
     case "clientResidenceAchetee" :
     case "clientReadPatrimoine" :
         ControllerClient::$action();
@@ -48,6 +51,11 @@ switch ($action) {
     case "patrimoineLogOut" :
     case "patrimoineInnovationMVC" :
         ControllerPatrimoine::$action();
+        break;
+    
+    case "innovationReadClient" :
+    case "innovationPDF" :
+        ControllerInnovation::$action();
         break;
 
     // Tache par défaut
