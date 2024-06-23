@@ -88,23 +88,34 @@ class ModelCompte
     }
 
 
-    public static function getAllCompte($login, $fetchMode)
+    public static function getAllCompte($login)
     {
         try {
             $database = Model::getInstance();
             $query = "SELECT C.label as compte_label, C.montant, B.label as banque_label FROM compte as C, banque as B, personne as P WHERE C.banque_id=B.id and C.personne_id=P.id and P.login=:login";
             $statement = $database->prepare($query);
             $statement->execute(['login' => $login]);
-            if ($fetchMode == "CLASS") {
-                $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelCompte");
-            } else {
-                $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            }
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $results;
         } catch (PDOException $e) {
             printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
             return NULL;
         }
+    }
+
+    public static function getComptesLabels() {
+        try {
+            $database = Model::getInstance();
+            $query = "SELECT compte.id, compte.label FROM compte, personne WHERE personne_id=personne.id and personne.login = :login";
+            $statement = $database->prepare($query);
+            $statement->execute(['login' => $_SESSION['login']]);
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelCompte");
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+
     }
 
 

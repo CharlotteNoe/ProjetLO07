@@ -12,7 +12,7 @@ class ControllerClient
     // Affiche la liste de tous les comptes du client
     public static function clientReadAllCompte()
     {
-        $results = ModelCompte::getAllCompte($_SESSION['login'], "ASSOC");
+        $results = ModelCompte::getAllCompte($_SESSION['login']);
         include 'config.php';
         $vue = $root . '/app/view/client/viewAllCompte.php';
         require($vue);
@@ -41,7 +41,7 @@ class ControllerClient
     // Affiche un formulaire pour faire un transfert inter-compte
     public static function clientTransfertInterCompte()
     {
-        $results = ModelCompte::getAllCompte($_SESSION['login'], "CLASS");
+        $results = ModelCompte::getComptesLabels();
         include 'config.php';
         $vue = $root . '/app/view/client/viewTransfertInterCompte.php';
         require($vue);
@@ -52,8 +52,10 @@ class ControllerClient
     {
         include 'config.php';
         if ($_GET['compteMoins'] == $_GET['comptePlus']) {
+            $results = ModelCompte::getComptesLabels();
             $vue = $root . '/app/view/client/viewErrorTransfertInterCompte.php';
         } elseif ($_GET['compteMoins'] == null || $_GET['comptePlus'] == null) {
+            $results = ModelCompte::getComptesLabels();
             $vue = $root . '/app/view/client/viewErrorTransfertInterCompte.php';
         } else {
             $results = ModelCompte::transfertInterCompte(
@@ -91,8 +93,8 @@ class ControllerClient
         }else{
             $montant = $_GET['residence']->getPrix();
             $id_vendeur = $_GET['residence']->getPersonne_id();
-            $results = ModelCompte::getAllCompte($id_vendeur, "CLASS");
-            $results2 = ModelCompte::getAllCompte($_SESSION['login'], "CLASS");
+            $results = ModelCompte::getAllCompte($id_vendeur);
+            $results2 = ModelCompte::getAllCompte($_SESSION['login']);
             $vue = $root . '/app/view/client/viewAchatCompte.php';
         }
 
@@ -117,7 +119,7 @@ class ControllerClient
     //Affiche le bilan du patrimoine
     public static function clientReadPatrimoine()
     {
-        $results = ModelCompte::getAllCompte($_SESSION['login'], "ASSOC");
+        $results = ModelCompte::getAllCompte($_SESSION['login']);
         $results2 = ModelResidence::getAllResidence($_SESSION['login']);
         include 'config.php';
         $vue = $root . '/app/view/client/viewPatrimoine.php';
