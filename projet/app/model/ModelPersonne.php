@@ -179,6 +179,23 @@ class ModelPersonne
         }
 
     }
+    
+    
+    public static function getPrenomNOm($id_client){
+        try {
+            $database = Model::getInstance();
+            $query = "SELECT prenom, nom from personne where id=:id_client";
+            $statement = $database->prepare($query);
+            $statement->execute([
+                'id_client' => $id_client
+            ]);
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, 'ModelPersonne');
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+    }
 
 }
 
