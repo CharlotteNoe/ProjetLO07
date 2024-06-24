@@ -16,6 +16,9 @@ class Model extends PDO
     {
         // les variables sont définies dans le fichier config.php
         include_once '../controller/config.php';
+$dsn = 'mysql:dbname=noecharl;host=localhost;charset=utf8';
+$username = 'noecharl';
+$password = 'deGFNkTL';
 
         if (DEBUG) echo("Model : getInstance : dsn = $dsn</br>");
 

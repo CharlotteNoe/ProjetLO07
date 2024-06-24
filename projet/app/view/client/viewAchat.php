@@ -21,12 +21,13 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     <form role="form" method='get' action='router1.php' class="mt-4 p-2 text-white bg-secondary rounded">
         <div class="form-group">
             <input type="hidden" name='action' value='clientResidenceAchatCompte'>
-            <label for="residence">Sélectionnez une résidence : </label> <select class="form-control" id='residence' name='residence' style="width: 150px">
+            <label for="residence">Sélectionnez une résidence : </label> <select class="form-control" id='residence' name='residence' style="width: 300px">
                 <?php
                 foreach ($results as $residence) {
-                    $id_residence=$residence->getId();
-                    $label_residence=$residence->getLabel();
-                    echo ("<option value='$id_residence'>$label_residence</option>");
+                    $id_residence=htmlspecialchars($residence['id']);
+                    $label_residence=htmlspecialchars($residence['label']);
+                    $ville_residence=htmlspecialchars($residence['ville']);
+                    echo ("<option value='$id_residence'>$label_residence ( $ville_residence )</option>");
                 }
                 ?>
             </select>

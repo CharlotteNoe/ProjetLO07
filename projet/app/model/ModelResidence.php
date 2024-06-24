@@ -14,8 +14,8 @@ class ModelResidence
         if (!is_null($id)) {
             $this->id = $id;
             $this->label = $label;
-            $this->montant = $montant;
-            $this->banque_id = $banque_id;
+            $this->ville = $ville;
+            $this->prix = $prix;
             $this->personne_id = $personne_id;
         }
     }
@@ -105,14 +105,58 @@ class ModelResidence
     {
         try {
             $database = Model::getInstance();
-            $query = "SELECT R.label as residence_label, R.prix, R.ville from residence as R, personne as P where R.personne_id=P.id and P.login<>:login";
+            $query = "SELECT R.id, R.label, R.ville from residence as R, personne as P where R.personne_id=P.id and P.login<>:login";
             $statement = $database->prepare($query);
             $statement->execute(['login' => $login]);
-            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelResidence");
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $results;
         } catch (PDOException $e) {
             printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
             return NULL;
+        }
+    }
+    
+    public static function getInfoResidence($id)
+    {
+        try {
+            $database = Model::getInstance();
+            $query = "SELECT prix, personne_id from residence where id=:id";
+            $statement = $database->prepare($query);
+            $statement->execute(['id' => $id]);
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+    }
+    
+    
+     public static function transfertResidence($login, $id_residence)
+    {
+        try {
+            $database = Model::getInstance();
+            try {
+                $database->beginTransaction();
+                $query1 = "UPDATE residence SET personne_id = (SELECT id from personne where login=:login) where id=:id_residence";
+                $statement1 = $database->prepare($query1);
+                $statement1->execute([
+                    'login' => $login,
+                    'id_residence'=>$id_residence
+                    ]);
+                $database->commit();
+                return true;
+                
+
+                
+            } catch (PDOException $e) {
+                $database->rollBack();
+                printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+                return false;
+            }
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return false;
         }
     }
     
@@ -133,4 +177,4 @@ class ModelResidence
 }
 
 ?>
-<!-- ----- fin ModelBanque -->
+<!-- ----- fin ModelResidence -->
