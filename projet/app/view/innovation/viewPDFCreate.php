@@ -15,7 +15,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
               
       ?>
       
-      <div class="mt-4 p-2 text-dark text-center bg-success rounded">
+      <div class="mt-4 p-2 text-dark text-center bg-primary rounded">
           <h4>
               Téléchargement des informations financière de <?php echo($prenom .' '.$nom) ;?>
           </h4>
@@ -27,7 +27,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
              <input type="hidden" name="residence" value='<?php echo($residence[0]) ?>'>
              <input type="hidden" name="nom" value='<?php echo($nom) ?>'>
              <input type="hidden" name="prenom" value='<?php echo($prenom) ?>'>
-             <button class="btn btn-success" type="submit">Télécharger PDF</button>
+             <button class="btn btn-primary" type="submit">Télécharger PDF</button>
 
         </form>
       </div>

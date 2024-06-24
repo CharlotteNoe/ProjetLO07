@@ -21,7 +21,7 @@ require($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         </div>
         <p/>
         <br/>
-        <button class="btn btn-success" type="submit">S'inscrire</button>
+        <button class="btn btn-primary" type="submit">S'inscrire</button>
     </form>
     <p/>
 </div>

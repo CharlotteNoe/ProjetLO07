@@ -19,7 +19,7 @@ require($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         </div>
         <p/>
         <br/>
-        <button class="btn btn-success" type="submit">Se connecter</button>
+        <button class="btn btn-primary" type="submit">Se connecter</button>
     </form>
     <p/>
 </div>

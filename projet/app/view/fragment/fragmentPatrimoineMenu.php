@@ -3,7 +3,7 @@ require_once '../model/ModelPersonne.php';
 ?>
 <!-- ----- début fragmentPatrimoineMenu -->
 
-<nav class="navbar navbar-expand-lg bg-success fixed-top">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top">
     <div class="container-fluid">
         <?php
         switch ($_SESSION['statut']) {

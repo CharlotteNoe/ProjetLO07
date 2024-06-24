@@ -12,7 +12,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
 
       ?>
 
-      <div class="mt-4 p-2 text-dark text-center bg-success rounded">
+      <div class="mt-4 p-2 text-dark text-center bg-primary rounded">
           <h4>
               Téléchargement des informations d'un compte client
           </h4>
@@ -33,7 +33,7 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         </select>
       </div>
       <p/><br/>
-      <button class="btn btn-success" type="submit">Télécharger PDF</button>
+      <button class="btn btn-primary" type="submit">Télécharger PDF</button>
     </form>
     <p/>
   </div>

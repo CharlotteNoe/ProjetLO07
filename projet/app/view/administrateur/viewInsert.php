@@ -11,7 +11,7 @@ require($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
     include $root . '/app/view/fragment/fragmentPatrimoineJumbotron.html';
     ?>
 
-    <div class="mt-4 p-2 text-dark text-center bg-success rounded">
+    <div class="mt-4 p-2 text-dark text-center bg-primary rounded">
         <h4>
             Ajout d'une banque
         </h4>
@@ -25,7 +25,7 @@ require($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         </div>
         <p/>
         <br/>
-        <button class="btn btn-success" type="submit">Valider l'ajout</button>
+        <button class="btn btn-primary" type="submit">Valider l'ajout</button>
     </form>
     <p/>
 </div>
