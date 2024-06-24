@@ -91,10 +91,12 @@ class ControllerClient
         if ($_GET['residence'] == null){
             $vue = $root . '/app/view/client/viewErrorAchat.php';
         }else{
-            $montant = $_GET['residence']->getPrix();
-            $id_vendeur = $_GET['residence']->getPersonne_id();
-            $results = ModelCompte::getAllCompte($id_vendeur);
-            $results2 = ModelCompte::getAllCompte($_SESSION['login']);
+            $id_residence=$_GET['residence'];
+            $info = ModelResidence::getInfoResidence($_GET['residence']);
+            $montant=htmlspecialchars($info[0]['prix']);
+            $id_vendeur = htmlspecialchars($info[0]['personne_id']);
+            $results = ModelCompte::getAllCompteVendeur($id_vendeur);
+            $results2 = ModelCompte::getAllCompte($_SESSION['login'],"ASSOC");
             $vue = $root . '/app/view/client/viewAchatCompte.php';
         }
 
@@ -111,7 +113,11 @@ class ControllerClient
             $results = ModelCompte::transfertInterCompte(
                 htmlspecialchars($_GET['compteAcheteur']), htmlspecialchars($_GET['compteVendeur']), htmlspecialchars($_GET['montant'])
             );
-            $vue = $root . '/app/view/client/viewAllResidence.php';
+            
+            $results2 = ModelResidence::transfertResidence(htmlspecialchars($_SESSION['login']), htmlspecialchars($_GET['id_residence']));
+            
+            
+            $vue = $root . '/app/view/viewPatrimoineAccueil.php';
         }
         require($vue);
     }

@@ -22,20 +22,23 @@ require ($root . '/app/view/fragment/fragmentPatrimoineHeader.html');
         <div class="form-group">
             <input type="hidden" name='action' value='clientResidenceAchetee'>
             <p>Montant de la résidence : <?php echo ($montant) ?></p><br/>
-            <label for="compteVendeur">Sélectionnez un compte du vendeur : </label> <select class="form-control" id='compteVendeur' name='compteVendeur' style="width: 150px">
+            <input type="hidden" name="montant" value='<?php echo($montant) ?>'>
+            <input type="hidden" name="id_residence" value='<?php echo($id_residence) ?>'>
+
+            <label for="compteVendeur">Sélectionnez un compte du vendeur : </label> <select class="form-control" id='compteVendeur' name='compteVendeur' required style="width: 300px">
                 <?php
                 foreach ($results as $compte) {
-                    $id_compte=$compte->getId();
-                    $label_compte=$compte->getLabel();
+                    $id_compte=htmlspecialchars($compte['id']);
+                    $label_compte=htmlspecialchars($compte['compte_label']);
                     echo ("<option value='$id_compte'>$label_compte</option>");
                 }
                 ?>
             </select>
-            <label for="compteAcheteur">Sélectionnez le compte où sera prélevé l'argent : </label> <select class="form-control" id='compteAcheteur' name='compteAcheteur' style="width: 150px">
+            <label for="compteAcheteur">Sélectionnez le compte où sera prélevé l'argent : </label> <select class="form-control" id='compteAcheteur' name='compteAcheteur' required style="width: 300px">
                 <?php
                 foreach ($results2 as $compte) {
-                    $id_compte=$compte->getId();
-                    $label_compte=$compte->getLabel();
+                    $id_compte=htmlspecialchars($compte['id']);
+                    $label_compte=htmlspecialchars($compte['compte_label']);
                     echo ("<option value='$id_compte'>$label_compte</option>");
                 }
                 ?>

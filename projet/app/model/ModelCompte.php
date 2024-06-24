@@ -92,10 +92,26 @@ class ModelCompte
     {
         try {
             $database = Model::getInstance();
-            $query = "SELECT C.label as compte_label, C.montant, B.label as banque_label FROM compte as C, banque as B, personne as P WHERE C.banque_id=B.id and C.personne_id=P.id and P.login=:login";
+            $query = "SELECT C.label as compte_label, C.montant, B.label as banque_label, C.id FROM compte as C, banque as B, personne as P WHERE C.banque_id=B.id and C.personne_id=P.id and P.login=:login";
             $statement = $database->prepare($query);
             $statement->execute(['login' => $login]);
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+    }
+    
+    public static function getAllCompteVendeur($id)
+    {
+        try {
+            $database = Model::getInstance();
+            $query = "SELECT  C.id, C.label as compte_label FROM compte as C WHERE C.personne_id=:id";
+            $statement = $database->prepare($query);
+            $statement->execute(['id' => $id]);
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            
             return $results;
         } catch (PDOException $e) {
             printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
@@ -173,25 +189,34 @@ class ModelCompte
             try {
                 $database->beginTransaction();
 
-                $query = "update compte set montant -= :montant where id=:compteMoins;";
-                $statement = $database->prepare($query);
-                $statement->execute([
-                    'montant' => $montant,
-                    'compteMoins' => $compteMoins]);
+                
+                
+                $query1 = "UPDATE compte SET montant = montant - :montant WHERE id = :compteMoins";
+                $statement1 = $database->prepare($query1);
+                $statement1->execute([
+                    'compteMoins' => $compteMoins,
+                    'montant'=>$montant
+                    ]);
+                
+                $query2 = "UPDATE compte SET montant = montant + :montant WHERE id = :comptePlus";
+                $statement2 = $database->prepare($query2);
+                $statement2->execute([
+                    'comptePlus' => $comptePlus,
+                    'montant'=>$montant
+                    ]);
+                $database->commit();
+                return true;
+                
 
-                $query = "update compte set montant += :montant where id=:comptePlus;";
-                $statement = $database->prepare($query);
-                $statement->execute([
-                    'montant' => $montant,
-                    'comptePlus' => $comptePlus]);
+                
             } catch (PDOException $e) {
                 $database->rollBack();
                 printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
-                return NULL;
+                return false;
             }
         } catch (PDOException $e) {
             printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
-            return NULL;
+            return false;
         }
     }
 }
