@@ -41,7 +41,7 @@ class ControllerClient
     // Affiche un formulaire pour faire un transfert inter-compte
     public static function clientTransfertInterCompte()
     {
-        $results = ModelCompte::getComptesLabels();
+        $results = ModelCompte::getAllCompte($_SESSION['login'], "ASSOC");
         include 'config.php';
         $vue = $root . '/app/view/client/viewTransfertInterCompte.php';
         require($vue);
@@ -52,15 +52,16 @@ class ControllerClient
     {
         include 'config.php';
         if ($_GET['compteMoins'] == $_GET['comptePlus']) {
-            $results = ModelCompte::getComptesLabels();
+            $results = ModelCompte::getAllCompte($_SESSION['login'], "ASSOC");
             $vue = $root . '/app/view/client/viewErrorTransfertInterCompte.php';
         } elseif ($_GET['compteMoins'] == null || $_GET['comptePlus'] == null) {
-            $results = ModelCompte::getComptesLabels();
+            $results = ModelCompte::getAllCompte($_SESSION['login'], "ASSOC");
             $vue = $root . '/app/view/client/viewErrorTransfertInterCompte.php';
         } else {
             $results = ModelCompte::transfertInterCompte(
                 htmlspecialchars($_GET['compteMoins']), htmlspecialchars($_GET['comptePlus']), htmlspecialchars($_GET['montant'])
             );
+            $results = ModelCompte::getAllCompte($_SESSION['login'], "ASSOC");
             $vue = $root . '/app/view/client/viewAllCompte.php';
         }
         require($vue);

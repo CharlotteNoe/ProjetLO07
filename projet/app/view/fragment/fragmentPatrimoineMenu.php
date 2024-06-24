@@ -55,7 +55,7 @@ require_once '../model/ModelPersonne.php';
                         echo('<ul class="dropdown-menu">');
                         echo('<li><a class="dropdown-item" href="router1.php?action=clientReadAllCompte">Liste des mes comptes</a></li>');
                         echo('<li><a class="dropdown-item" href="router1.php?action=clientCompteCreate">Ajouter un nouveau compte</a></li>');
-                        echo('<li><a class="dropdown-item" href="router1.php?action=clientTransfertInterCompte">Transfert inter-compte (TODO)</a></li>');
+                        echo('<li><a class="dropdown-item" href="router1.php?action=clientTransfertInterCompte">Transfert inter-compte</a></li>');
                         echo('</ul>');
                         echo('</li>');
 
@@ -63,7 +63,7 @@ require_once '../model/ModelPersonne.php';
                         echo('<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mes résidences</a>');
                         echo('<ul class="dropdown-menu">');
                         echo('<li><a class="dropdown-item" href="router1.php?action=clientReadAllResidence">Liste des mes résidences</a></li>');
-                        echo('<li><a class="dropdown-item" href="router1.php?action=clientResidenceAchat">Achat d' . "'une nouvelle résidence (ALED)</a></li>");
+                        echo('<li><a class="dropdown-item" href="router1.php?action=clientResidenceAchat">Achat d' . "'une nouvelle résidence </a></li>");
                         echo('</ul>');
                         echo('</li>');
 
